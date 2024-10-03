@@ -10,8 +10,8 @@ const playerInput = document.getElementById('player-input');
         submitButton.addEventListener('click', startGame);
 
         function startGame() {
-            player1 = document.getElementById('player-1').value;
-            player2 = document.getElementById('player-2').value;
+            player1 = document.getElementById('player1').value;
+            player2 = document.getElementById('player2').value;
 
             if (player1 && player2) {
                 playerInput.style.display = 'none';
@@ -28,7 +28,7 @@ const playerInput = document.getElementById('player-input');
         function makeMove(cell) {
             const index = parseInt(cell.id) - 1;
             if (board[index] === '' && !checkWinner()) {
-                board[index] = currentPlayer === player1 ? 'X' : 'O';
+                board[index] = currentPlayer === player1 ? 'x' : 'o';
                 cell.textContent = board[index];
                 if (checkWinner()) {
                     messageDiv.textContent = `${currentPlayer} congratulations you won!`;
